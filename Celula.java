@@ -1,10 +1,10 @@
-class Celula {
+class CelulaFila {
     public int elemento;
-    public Celula prox;
-    public Celula() {
+    public CelulaFila prox;
+    public CelulaFila() {
         this(0);
     }
-    public Celula (int x) {
+    public CelulaFila (int x) {
         this.elemento = x;
         this.prox = null;
     }

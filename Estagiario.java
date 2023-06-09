@@ -4,16 +4,17 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Estagiario {
-
     /* 
      * Lê arquivo e armazena valores nos objetos já determinados.
      */
 
-     public void ler(File arq) throws IOException {
+    ListaCurso listaCursos = new ListaCurso();
+    ListaCandidato listaCandidatos = new ListaCandidato();
+
+    public void ler(File arq) throws IOException {
         lerPrivado(arq);
      }
-
-    private void lerPrivado(File arq) throws IOException  {
+        private void lerPrivado(File arq) throws IOException  {
         try {
             FileReader leitor = new FileReader(arq);
             BufferedReader bufferedReader = new BufferedReader(leitor);
@@ -28,38 +29,26 @@ public class Estagiario {
             System.out.println("qnt Cursos " +qntCursos ); 
             System.out.println("qnt Candidatos " +qntCandidatos );
 
+
             /* CURSOS */
-            String [] [] qntCur = new String [qntCursos] [3];
             for(int i=0; i<(qntCursos); i++) {
                 linha = bufferedReader.readLine();
                 linhaTemporaria = organizador(linha);
 
-                    qntCur[i][0] = linhaTemporaria[0];
-                    qntCur[i][1] = linhaTemporaria[1];
-                    qntCur[i][2] = linhaTemporaria[2];
-                } 
-                System.out.println("Cursos");
-                for (int i = 0; i < qntCur.length; i++) {
-                    System.out.println("id = "+qntCur[i][0]+" "+qntCur[i][1]+ " "+qntCur[i][2]);
-                    
-                }
+                listaCursos.inserirInicio(new Curso (Integer.parseInt(linhaTemporaria[0]), linhaTemporaria[1], Integer.parseInt(linhaTemporaria[2])));
+                listaCandidatos.mostrar();    
+                
+            } 
+
             /* CANDIDATOS */
-            String [] [] qntCand = new String [qntCandidatos] [6];
             for(int i=0; i<(qntCandidatos); i++) {
                 linha = bufferedReader.readLine();
                 linhaTemporaria = organizador(linha);
 
-                qntCand[i][0] = linhaTemporaria[0];
-                qntCand[i][1] = linhaTemporaria[1];
-                qntCand[i][2] = linhaTemporaria[2];
-                qntCand[i][3] = linhaTemporaria[3];
-                qntCand[i][4] = linhaTemporaria[4];
-                qntCand[i][5] = linhaTemporaria[5];
-                }
-                System.out.println("Candidadtos");
-                for (int i = 0; i < qntCand.length; i++) {
-                    System.out.println("->"+qntCand[i][0]+" "+qntCand[i][1]+ " "+qntCand[i][2]+" "+qntCand[i][3]+ " "+qntCand[i][4]+ " "+qntCand[i][5]);
-                }
+                listaCandidatos.inserirInicio(new Candidato (linhaTemporaria[0], Integer.parseInt(linhaTemporaria[1]), Integer.parseInt(linhaTemporaria[2]), Integer.parseInt(linhaTemporaria[3]), Integer.parseInt(linhaTemporaria[4]), Integer.parseInt(linhaTemporaria[5])));
+                listaCandidatos.mostrar();    
+            }
+
 
             leitor.close();
             bufferedReader.close();

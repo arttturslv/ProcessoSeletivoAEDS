@@ -1,11 +1,11 @@
 public class Fila {
-    private Celula primeiro, ultimo;
+    private CelulaFila primeiro, ultimo;
     public Fila () {
-        primeiro = new Celula();
+        primeiro = new CelulaFila();
         ultimo = primeiro;
     }
     public void inserir(int x) { //Inserir(3)
-        ultimo.prox = new Celula(x);
+        ultimo.prox = new CelulaFila(x);
         ultimo = ultimo.prox;
     }
         
@@ -13,7 +13,7 @@ public class Fila {
         if (primeiro == ultimo) {
         throw new Exception("Erro!");
         }
-        Celula tmp = primeiro;
+        CelulaFila tmp = primeiro;
         primeiro = primeiro.prox;
         int elemento = primeiro.elemento;
         tmp.prox = null;
@@ -23,7 +23,7 @@ public class Fila {
 
     public void mostrar() {
         System.out.print("[ ");
-        for (Celula i = primeiro.prox; i != null; i = i.prox){
+        for (CelulaFila i = primeiro.prox; i != null; i = i.prox){
             System.out.print(i.elemento + " ");
         }
         System.out.println("]");
