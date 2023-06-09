@@ -1,3 +1,5 @@
+package entities;
+
 public class Candidato {
     private String nome;
     private double notaRedacao, notaMatematica, notaLinguagem;

@@ -1,3 +1,5 @@
+package entities;
+
 class CelulaListaCu {
     public Curso elemento;
     public CelulaListaCu prox;

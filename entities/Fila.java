@@ -1,3 +1,5 @@
+package entities;
+
 public class Fila {
     private CelulaFila primeiro, ultimo;
     public Fila () {

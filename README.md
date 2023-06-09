@@ -11,8 +11,8 @@ Exemplo do arquivo de saída (.txt):</p>
 Classes:
 + Main.
 + Aluno (String nome, double notaRed, double notaMat, double notaLing, int [] opcoesCursos)
-+ Cursos (String nomeCurso, int codCurso, double notaCorte, int qntVagas, Fila ````<alunos>```` fila_espera, Lista ````<alunos>```` lista_aprovados) //fila de cursos que armazenam os candidatos.
++ Cursos (String nomeCurso, int codCurso, double notaCorte, int qntVagas, entities.Fila ````<alunos>```` fila_espera, Lista ````<alunos>```` lista_aprovados) //fila de cursos que armazenam os candidatos.
 + Lista () //lista criada
-+ Fila () //fila nativa "queue"
-+ Estagiario (Leitura e escrita)
++ entities.Fila () //fila nativa "queue"
++ entities.Estagiario (Leitura e escrita)
 + QuickSort () //Decrescente 

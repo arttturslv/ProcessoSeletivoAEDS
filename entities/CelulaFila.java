@@ -1,3 +1,5 @@
+package entities;
+
 class CelulaFila {
     public int elemento;
     public CelulaFila prox;

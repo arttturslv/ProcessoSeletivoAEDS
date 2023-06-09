@@ -1,3 +1,5 @@
+package entities;
+
 public class CelulaListaCa {
     public Candidato elemento;
     public CelulaListaCa prox;
