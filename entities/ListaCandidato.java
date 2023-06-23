@@ -33,8 +33,7 @@ public class ListaCandidato {
             inserirFim(x);
         } else {
             CelulaListaCa i = primeiro;
-            for (int j = 0; j < pos; j++, i = i.prox)
-                ;
+            for (int j = 0; j < pos; j++, i = i.prox);
             CelulaListaCa tmp = new CelulaListaCa(x);
             tmp.prox = i.prox;
             i.prox = tmp;
@@ -59,8 +58,7 @@ public class ListaCandidato {
         if (primeiro == ultimo)
             throw new Exception("Erro!");
         CelulaListaCa i;
-        for (i = primeiro; i.prox != ultimo; i = i.prox)
-            ;
+        for (i = primeiro; i.prox != ultimo; i = i.prox);
         Candidato elemento = ultimo.elemento;
         ultimo = i;
         ultimo.prox = null;
@@ -79,8 +77,7 @@ public class ListaCandidato {
             elemento = removerFim();
         } else {
             CelulaListaCa i = primeiro;
-            for (int j = 0; j < pos; j++, i = i.prox)
-                ;
+            for (int j = 0; j < pos; j++, i = i.prox);
             CelulaListaCa tmp = i.prox;
             elemento = tmp.elemento;
             i.prox = tmp.prox;

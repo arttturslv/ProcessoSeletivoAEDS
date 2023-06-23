@@ -23,13 +23,9 @@ public class Candidato {
     @Override
     public String toString() {
         return "Candidato{" +
-                "nome='" + nome + '\'' +
-                ", notaRedacao=" + notaRedacao +
-                ", notaMatematica=" + notaMatematica +
-                ", notaLinguagem=" + notaLinguagem +
-                ", opcao1=" + opcao1 +
-                ", opcao2=" + opcao2 +
-                '}';
+                "nome='" + nome +
+                "', notaMedia=" + notaMedia +
+                "}\n";
     }
 
     public void mostrar() {

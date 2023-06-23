@@ -1,5 +1,8 @@
 package entities;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 public class Curso {
@@ -7,6 +10,7 @@ public class Curso {
     private int codCurso;
     private int qntVagas;
     private double notaCorte; //calc
+    private List<Candidato> listaSelecionados;
     private Queue<Candidato> filaEspera;
     //private Lista listaAprovados;
 
@@ -15,6 +19,32 @@ public class Curso {
         this.codCurso = codCurso;
         this.nomeCurso = nomeCurso;
         this.qntVagas = qntVagas;
+        this.listaSelecionados = new ArrayList<>();
+        this.filaEspera = new LinkedList<>();
+    }
+
+    public String getNomeCurso() {
+        return nomeCurso;
+    }
+
+    public int getCodCurso() {
+        return codCurso;
+    }
+
+    public int getQntVagas() {
+        return qntVagas;
+    }
+
+    public double getNotaCorte() {
+        return notaCorte;
+    }
+
+    public List<Candidato> getListaSelecionados() {
+        return listaSelecionados;
+    }
+
+    public Queue<Candidato> getFilaEspera() {
+        return filaEspera;
     }
 
     @Override
@@ -34,4 +64,12 @@ public class Curso {
         System.out.println("vagas \t- "+qntVagas);
     }
 
+    public boolean inserirSelecionado (Candidato candidato){
+        if (qntVagas > 0){
+            listaSelecionados.add(candidato);
+            qntVagas--;
+            return true;
+        }
+        return false;
+    }
 }

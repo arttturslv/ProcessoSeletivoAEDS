@@ -106,4 +106,12 @@ public class ListaCurso {
         }
         return tamanho;
     }
+
+    public Curso pesquisar(int codigo){
+        for (CelulaListaCu i = primeiro; i != ultimo; i = i.prox) {
+            if(i.elemento.getCodCurso() == codigo)
+                return i.elemento;
+        }
+        return null;
+    }
 }
