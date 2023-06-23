@@ -5,6 +5,7 @@ public class Candidato {
     private double notaRedacao;
     private double notaMatematica;
     private double notaLinguagem;
+    private double notaMedia;
     private int opcao1;
     private int opcao2;
 
@@ -14,6 +15,7 @@ public class Candidato {
         this.notaRedacao = notaRedacao;
         this.notaMatematica = notaMatematica;
         this.notaLinguagem = notaLinguagem;
+        this.notaMedia = (notaRedacao + notaMatematica + notaLinguagem) / 3;
         this.opcao1 = opcao1;
         this.opcao2 = opcao2;
     }
@@ -37,10 +39,9 @@ public class Candidato {
         System.out.println("linguagem \t- "+notaLinguagem);
         System.out.println("1ª opcao \t- "+opcao1);
         System.out.println("2ª opcao \t- "+opcao2);
+        System.out.println("Nota média \t- "+notaMedia);
     }
 
-
-    /* GETTERS */
     public String getNome() {
         return nome;
     }
@@ -53,6 +54,9 @@ public class Candidato {
     public double getNotaLinguagem() {
         return notaLinguagem;
     }
+    public double getNotaMedia() {
+        return notaMedia;
+    }
     public int getOpcao1 () {
         return opcao1;
     }
@@ -64,7 +68,6 @@ public class Candidato {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
     public void setOpcao1 (int opcao1) {
         this.opcao1 = opcao1;
     }
@@ -72,6 +75,4 @@ public class Candidato {
         this.opcao2 = opcao2;
     }
 
-    
-    
 }
