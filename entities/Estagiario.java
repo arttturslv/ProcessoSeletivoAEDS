@@ -85,6 +85,7 @@ public class Estagiario {
     private void quicksort(Candidato[] array, int esq, int dir) {
         int i = esq, j = dir;
         double pivo = array[(esq + dir) / 2].getNotaMedia();
+        Candidato temp;
 
         while (i <= j) {
             while (array[i].getNotaMedia() < pivo)
@@ -92,19 +93,17 @@ public class Estagiario {
             while (array[j].getNotaMedia() > pivo)
                 j--;
             if (i <= j) {
-                Candidato temp = array[i];
+                temp = array[i];
                 array[i] = array[j];
                 array[j] = temp;
                 i++;
                 j--;
             }
-
+        }
             if (esq < j)
                 quicksort(array, esq, j);
             if (i < dir)
                 quicksort(array, i, dir);
-            j--;
-        }
     }
 
 
