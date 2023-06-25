@@ -110,7 +110,7 @@ public class Estagiario {
             for (int i = 0; i < candidatos.length; i++) { 
                 listaCandidato.inserirFim(candidatos[i]);
             }
-
+            
             return listaCandidato;
         }
 
@@ -129,7 +129,7 @@ public class Estagiario {
             Candidato[] arrayEsq = new Candidato[nEsq + 1];
             Candidato[] arrayDir = new Candidato[nDir + 1];
 
-            Candidato limite = new Candidato("artur", Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE, 10, 10);
+            Candidato limite = new Candidato("saojoao", Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE, 10, 10);
 
             arrayEsq[nEsq] = limite;
             arrayDir[nDir] = limite;
