@@ -1,3 +1,4 @@
+//Armazena a celula da fila de espera.
 package src.fila;
 
 import src.candidato.Candidato;

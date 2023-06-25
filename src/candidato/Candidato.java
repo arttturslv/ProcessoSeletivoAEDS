@@ -1,4 +1,4 @@
-//possui informações dos candidatos
+//Armazena informações dos candidatos
 package src.candidato;
 
 import java.text.DecimalFormat;

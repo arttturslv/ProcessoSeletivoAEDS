@@ -1,5 +1,4 @@
-//Main - chama as funções principais.
-
+//Main - leitura da entrada e chama as principais funções.
 package src;
 
 import src.lista.ListCandidatos;
@@ -20,10 +19,10 @@ public class App {
         
         if(arq.exists()) {
             System.out.println("O arquivo foi encontrado.\n");
-            Candidato [] vetorCandidatos = estagiario.leitura(arq); //recebe o vetor de candidatos 
-            listaCandidato = estagiario.OrdenaCandidatos(vetorCandidatos); //envia o vetor e recebe a lista ordenada     
-            listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso);//envia a lista de candidatos e de cursos (vazia), recebendo a lista de cursos já preenchidas
-            estagiario.escrita(listaCurso); //escreve no arquivo
+            Candidato [] vetorCandidatos = estagiario.leitura(arq); //recebe o vetor de candidatos da leitura do arquivo.
+            listaCandidato = estagiario.OrdenaCandidatos(vetorCandidatos); //recebe o vetor e retorna a lista ordenada.
+            listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso);//recebe a lista de candidatos e de cursos, preenchendo os cursos que possuem 
+            estagiario.escrita(listaCurso); //escreve o curso no arquivo
         } else {
             System.out.println("O arquivo não foi encontrado.\n");
         }

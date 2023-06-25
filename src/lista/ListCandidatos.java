@@ -1,5 +1,4 @@
 //Armazena a lista de objetos do tipo Candidato.
-
 package src.lista;
 
 import src.candidato.Candidato;

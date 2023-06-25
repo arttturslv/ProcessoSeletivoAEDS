@@ -1,3 +1,4 @@
+//Armazena as principais funções, como a de leitura, escrita, ordenação e processo seletivo.
 package src.auxiliar;
 
 import java.io.BufferedReader;
