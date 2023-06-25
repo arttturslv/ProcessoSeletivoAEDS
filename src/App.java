@@ -1,16 +1,16 @@
 package src;
 
-import src.lista.ListCandidatos;
+import src.lista.ListaCandidatos;
 import src.auxiliar.Estagiario;
 import src.candidato.Candidato;
-import src.lista.ListCursos;
+import src.lista.ListaCursos;
 
 import java.io.File;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        ListCursos listaCurso = new ListCursos();
-        ListCandidatos listaCandidato = new ListCandidatos();
+        ListaCursos listaCurso = new ListaCursos();
+        ListaCandidatos listaCandidato = new ListaCandidatos();
 
         Estagiario estagiario = new Estagiario(); //cria o objeto que vai ajudar as paradas
 

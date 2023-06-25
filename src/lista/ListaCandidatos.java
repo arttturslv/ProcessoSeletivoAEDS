@@ -2,23 +2,23 @@ package src.lista;
 
 import src.candidato.Candidato;
 
-public class ListCandidatos {
-    private ListCelCandidatos primeiro, ultimo;
+public class ListaCandidatos {
+    private CelulaListaCandidatos primeiro, ultimo;
 
-    public ListCandidatos() {
-        primeiro = new ListCelCandidatos();
+    public ListaCandidatos() {
+        primeiro = new CelulaListaCandidatos();
         ultimo = primeiro;
     }
 
     public void inserirFim(Candidato x) {
-        ultimo.prox = new ListCelCandidatos(x);
+        ultimo.prox = new CelulaListaCandidatos(x);
         ultimo = ultimo.prox;
     }
 
     public Candidato removerFim() throws Exception {
         if (primeiro == ultimo)
             throw new Exception("Erro!");
-        ListCelCandidatos i;
+        CelulaListaCandidatos i;
         for (i = primeiro; i.prox != ultimo; i = i.prox)
             ;
         Candidato elemento = ultimo.elemento;
@@ -32,7 +32,7 @@ public class ListCandidatos {
     @Override
     public String toString() {
         String candidatos = "";
-        for (ListCelCandidatos i = primeiro.prox; i != null; i = i.prox) {
+        for (CelulaListaCandidatos i = primeiro.prox; i != null; i = i.prox) {
             candidatos += i.elemento.toString();
         }
         return candidatos;

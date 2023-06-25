@@ -2,16 +2,16 @@ package src.lista;
 
 import src.curso.Curso;
 
-public class ListCursos {
-    private ListCelCursos primeiro, ultimo;
+public class ListaCursos {
+    private CelulaListaCursos primeiro, ultimo;
 
-    public ListCursos() {
-        primeiro = new ListCelCursos();
+    public ListaCursos() {
+        primeiro = new CelulaListaCursos();
         ultimo = primeiro;
     }
 
     public void inserirFim(Curso x) {
-        ultimo.prox = new ListCelCursos(x);
+        ultimo.prox = new CelulaListaCursos(x);
         ultimo = ultimo.prox;
     }
 
@@ -20,7 +20,7 @@ public class ListCursos {
     * Se não curso, retorna null
     */
     public Curso pesquisar(int codigo) {
-        for (ListCelCursos i = primeiro.prox; i != null; i = i.prox) {
+        for (CelulaListaCursos i = primeiro.prox; i != null; i = i.prox) {
             if (i.elemento.getcodigoCurso() == codigo) {
                 return i.elemento;
             }
@@ -32,7 +32,7 @@ public class ListCursos {
     @Override
     public String toString() {
         String Cursos = "";
-        for (ListCelCursos i = primeiro.prox; i != null; i = i.prox) {
+        for (CelulaListaCursos i = primeiro.prox; i != null; i = i.prox) {
             Cursos += i.elemento.toString();
         }
         return Cursos;
@@ -40,7 +40,7 @@ public class ListCursos {
 
     public void mostrar() {
         System.out.print("\nLISTA DE CURSOS:\n");
-        for (ListCelCursos i = primeiro.prox; i != null; i = i.prox) {
+        for (CelulaListaCursos i = primeiro.prox; i != null; i = i.prox) {
             i.elemento.mostrar();
         }
     }

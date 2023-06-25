@@ -12,14 +12,14 @@ import java.nio.charset.StandardCharsets;
 
 import src.candidato.Candidato;
 import src.curso.Curso;
-import src.lista.ListCandidatos;
-import src.lista.ListCursos;
+import src.lista.ListaCandidatos;
+import src.lista.ListaCursos;
 
 public class Estagiario {
     private int quantidadeCursos;
     private int quantidadeCandidatos;
 
-    public Candidato [] leituraArquivo(File arq, ListCursos listaCursos) throws Exception {
+    public Candidato [] leituraArquivo(File arq, ListaCursos listaCursos) throws Exception {
         try (FileInputStream fis = new FileInputStream(arq)) {
             InputStreamReader leitor = new InputStreamReader(fis, StandardCharsets.UTF_8);
             BufferedReader bufferedReader = new BufferedReader(leitor);
@@ -73,7 +73,7 @@ public class Estagiario {
     }
 
 
-    public ListCandidatos ordenaCandidatos(Candidato[] vetorCandidatos, ListCandidatos listaCandidatos) {
+    public ListaCandidatos ordenaCandidatos(Candidato[] vetorCandidatos, ListaCandidatos listaCandidatos) {
         mergesortRedacao(vetorCandidatos, 0, vetorCandidatos.length - 1);
         System.out.println(" - Organizado por redação:");
 
@@ -159,7 +159,7 @@ public class Estagiario {
             }
 
 
-    public ListCursos processoSeletivo(ListCandidatos listaCandidatos, ListCursos listaCursos) throws Exception {
+    public ListaCursos processoSeletivo(ListaCandidatos listaCandidatos, ListaCursos listaCursos) throws Exception {
         System.out.println("\nOs candidatos estão sendo selecionados...");
 
         while (!(listaCandidatos.isVazia())) { 
@@ -190,7 +190,7 @@ public class Estagiario {
     }
 
 
-    public void escritaArquivo(ListCursos listaCursos) throws Exception {
+    public void escritaArquivo(ListaCursos listaCursos) throws Exception {
         System.out.println("\nEscrevendo no arquivo...");
         File arq = new File("saida.txt");
 

@@ -2,15 +2,15 @@ package src.lista;
 
 import src.candidato.Candidato;
 
-class ListCelCandidatos {
+class CelulaListaCandidatos {
     public Candidato elemento;
-    public ListCelCandidatos prox;
+    public CelulaListaCandidatos prox;
     
-    public ListCelCandidatos() {
+    public CelulaListaCandidatos() {
         this(null);
     }
     
-    public ListCelCandidatos (Candidato candidato) {
+    public CelulaListaCandidatos (Candidato candidato) {
         this.elemento = candidato;
         this.prox = null;
     }

@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 import src.candidato.Candidato;
 import src.fila.FilaEspera;
-import src.lista.ListCandidatos;
+import src.lista.ListaCandidatos;
 
 public class Curso {
     DecimalFormat formataDouble = new DecimalFormat("###,##0.00"); //usado para formatação das casas decimais (double)
@@ -12,14 +12,14 @@ public class Curso {
     private int codigoCurso;
     private int quantidadeVagas;
     private double notaCorte;
-    private ListCandidatos listaSelecionados;
+    private ListaCandidatos listaSelecionados;
     private FilaEspera filaEspera;
 
     public Curso(int codigoCurso, String nomeCurso, int quantidadeVagas) {
         this.codigoCurso = codigoCurso;
         this.nomeCurso = nomeCurso;
         this.quantidadeVagas = quantidadeVagas;
-        this.listaSelecionados = new ListCandidatos();
+        this.listaSelecionados = new ListaCandidatos();
         this.filaEspera = new FilaEspera();
     }
 

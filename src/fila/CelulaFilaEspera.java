@@ -2,14 +2,14 @@ package src.fila;
 
 import src.candidato.Candidato;
 
-class FilaCelEspera {
+class CelulaFilaEspera {
     public Candidato elemento;
-    public FilaCelEspera prox;
+    public CelulaFilaEspera prox;
 
-    public FilaCelEspera() {
+    public CelulaFilaEspera() {
         this(null);
     }
-    public FilaCelEspera (Candidato x) {
+    public CelulaFilaEspera (Candidato x) {
         this.elemento = x;
         this.prox = null;
     }

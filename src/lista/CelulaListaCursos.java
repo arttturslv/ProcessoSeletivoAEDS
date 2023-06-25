@@ -2,15 +2,15 @@ package src.lista;
 
 import src.curso.Curso;
 
-class ListCelCursos {
+class CelulaListaCursos {
     public Curso elemento;
-    public ListCelCursos prox;
+    public CelulaListaCursos prox;
     
-    public ListCelCursos() {
+    public CelulaListaCursos() {
         this(null);
     }
     
-    public ListCelCursos (Curso curso) {
+    public CelulaListaCursos (Curso curso) {
         this.elemento = curso;
         this.prox = null;
     }
