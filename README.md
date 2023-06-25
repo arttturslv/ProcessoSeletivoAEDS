@@ -1,6 +1,6 @@
 # TB-AEDS
 
-
+TODO - ATUALIZAR!
 
 Exemplo do arquivo de entrada (.txt):</p>
 ![243194908-c9417e0c-5712-48b1-9696-883fc2cc8adc](https://github.com/arttturslv/TB-AEDS/assets/115251355/3fe545d5-3320-45fe-a14f-6ff97ace8ba5)
