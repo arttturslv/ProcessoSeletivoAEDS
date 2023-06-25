@@ -1,4 +1,3 @@
-//Armazena a celula da lista de candidatos.
 package src.lista;
 
 import src.candidato.Candidato;
@@ -10,6 +9,7 @@ class ListCelCandidatos {
     public ListCelCandidatos() {
         this(null);
     }
+    
     public ListCelCandidatos (Candidato candidato) {
         this.elemento = candidato;
         this.prox = null;

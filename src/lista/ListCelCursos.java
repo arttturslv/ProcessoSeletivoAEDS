@@ -1,4 +1,3 @@
-//Armazena a celula da lista de objetos.
 package src.lista;
 
 import src.curso.Curso;
@@ -10,6 +9,7 @@ class ListCelCursos {
     public ListCelCursos() {
         this(null);
     }
+    
     public ListCelCursos (Curso curso) {
         this.elemento = curso;
         this.prox = null;

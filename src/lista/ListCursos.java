@@ -1,4 +1,3 @@
-//Armazena a lista de objetos do tipo Curso.
 package src.lista;
 
 import src.curso.Curso;
@@ -6,23 +5,23 @@ import src.curso.Curso;
 public class ListCursos {
     private ListCelCursos primeiro, ultimo;
 
-    //CONSTRUTOR
     public ListCursos() {
         primeiro = new ListCelCursos();
         ultimo = primeiro;
     }
 
-    //METODOS
-    /* Como os cursos estão organizados, apenas o inserirFim é necessário */
     public void inserirFim(Curso x) {
         ultimo.prox = new ListCelCursos(x);
         ultimo = ultimo.prox;
     }
 
-  /* Método pesquisar retorna o curso, caso não encontre ele retorna null */
+    /*
+    * O metodo recebe um codigo, se houver curso com o mesmo codigo, retorna o curso
+    * Se não curso, retorna null
+    */
     public Curso pesquisar(int codigo) {
         for (ListCelCursos i = primeiro.prox; i != null; i = i.prox) {
-            if (i.elemento.getCodCurso() == codigo) {
+            if (i.elemento.getcodigoCurso() == codigo) {
                 return i.elemento;
             }
         }
@@ -42,9 +41,7 @@ public class ListCursos {
     public void mostrar() {
         System.out.print("\nLISTA DE CURSOS:\n");
         for (ListCelCursos i = primeiro.prox; i != null; i = i.prox) {
-            System.out.print("\n");
             i.elemento.mostrar();
         }
     }
-
 }

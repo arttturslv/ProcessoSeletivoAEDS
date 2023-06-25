@@ -1,4 +1,3 @@
-//Main - leitura da entrada e chama as principais funções.
 package src;
 
 import src.lista.ListCandidatos;
@@ -13,16 +12,17 @@ public class App {
         ListCursos listaCurso = new ListCursos();
         ListCandidatos listaCandidato = new ListCandidatos();
 
-        Estagiario estagiario = new Estagiario(listaCurso, listaCandidato); //cria o objeto que vai ajudar as paradas
+        Estagiario estagiario = new Estagiario(); //cria o objeto que vai ajudar as paradas
 
         File arq = new File ("resources/entrada.txt");
         
         if(arq.exists()) {
             System.out.println("O arquivo foi encontrado.\n");
-            Candidato [] vetorCandidatos = estagiario.leitura(arq); //recebe o vetor de candidatos da leitura do arquivo.
-            listaCandidato = estagiario.OrdenaCandidatos(vetorCandidatos); //recebe o vetor e retorna a lista ordenada.
+
+            Candidato [] vetorCandidatos = estagiario.leituraArquivo(arq, listaCurso); //recebe o vetor de candidatos da leitura do arquivo.
+            listaCandidato = estagiario.ordenaCandidatos(vetorCandidatos, listaCandidato); //recebe o vetor e retorna a lista ordenada.
             listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso);//recebe a lista de candidatos e de cursos, preenchendo os cursos que possuem 
-            estagiario.escrita(listaCurso); //escreve o curso no arquivo
+            estagiario.escritaArquivo(listaCurso); //escreve o curso no arquivo
         } else {
             System.out.println("O arquivo não foi encontrado.\n");
         }
