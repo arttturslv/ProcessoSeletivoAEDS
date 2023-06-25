@@ -12,7 +12,7 @@ public class App {
         ListaCursos listaCurso = new ListaCursos();
         ListaCandidatos listaCandidato = new ListaCandidatos();
 
-        Estagiario estagiario = new Estagiario(); //cria o objeto que vai ajudar as paradas
+        Estagiario estagiario = new Estagiario();
 
         File arq = new File ("resources/entrada.txt");
         
@@ -21,8 +21,8 @@ public class App {
 
             Candidato [] vetorCandidatos = estagiario.leituraArquivo(arq, listaCurso); //recebe o vetor de candidatos da leitura do arquivo.
             listaCandidato = estagiario.ordenaCandidatos(vetorCandidatos, listaCandidato); //recebe o vetor e retorna a lista ordenada.
-            listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso);//recebe a lista de candidatos e de cursos, preenchendo os cursos que possuem 
-            estagiario.escritaArquivo(listaCurso); //escreve o curso no arquivo
+            listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso); //recebe a lista de candidatos e de cursos, preenchendo os cursos que possuem 
+            estagiario.escritaArquivo(listaCurso);
         } else {
             System.out.println("O arquivo não foi encontrado.\n");
         }
