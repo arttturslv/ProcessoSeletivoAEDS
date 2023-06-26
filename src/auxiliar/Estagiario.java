@@ -46,7 +46,7 @@ public class Estagiario {
             }
             listaCursos.mostrar();
 
-            Candidato[] vetorCandidatos = new Candidato[quantidadeCandidatos];
+            Candidato [] vetorCandidatos = new Candidato[quantidadeCandidatos];
             /* leitura dos cursos e criação do vetor de candidatos */
             for (int i = 0; i < quantidadeCandidatos; i++) {
                 linha = bufferedReader.readLine();
@@ -73,7 +73,7 @@ public class Estagiario {
     }
 
 
-    public ListaCandidatos ordenaCandidatos(Candidato[] vetorCandidatos, ListaCandidatos listaCandidatos) {
+    public void ordenaCandidatos(Candidato[] vetorCandidatos, ListaCandidatos listaCandidatos) {
         mergesortRedacao(vetorCandidatos, 0, vetorCandidatos.length - 1);
         System.out.println(" - Organizado por redação:");
 
@@ -84,8 +84,6 @@ public class Estagiario {
         for (int i = 0; i < vetorCandidatos.length; i++) { 
             listaCandidatos.inserirFim(vetorCandidatos[i]);
         }
-
-        return listaCandidatos;
     }
         
         private void mergesortRedacao(Candidato[] array, int esq, int dir) {
