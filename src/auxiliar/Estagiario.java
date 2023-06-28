@@ -95,7 +95,7 @@ public class Estagiario {
         }
     }
 
-    
+
     private void intercalar(Candidato[] array, int esq, int meio, int dir, String ordem) {
         int nEsq = meio - esq + 1;
         int nDir = dir - meio;
@@ -132,11 +132,10 @@ public class Estagiario {
     public ListaCursos processoSeletivo(Candidato[] vetorCandidatos, ListaCursos listaCursos) throws Exception {
         System.out.println("\nOs candidatos estão sendo selecionados...");
 
-        for (int i = vetorCandidatos.length - 1; i >= 0; i--) { // começa de tras pra frente (as maiores notas estão no
-                                                               // fim)
+        for (int i = vetorCandidatos.length - 1; i >= 0; i--) { // começa de tras pra frente (as maiores notas estão no fim)
+
             Candidato candidatoAtual = vetorCandidatos[i];
-            Curso primeiraOpcao = listaCursos.pesquisar(candidatoAtual.getPrimeiraOpcao()); // pesquisar retorna null se
-                                                                                            // não encontrar
+            Curso primeiraOpcao = listaCursos.pesquisar(candidatoAtual.getPrimeiraOpcao()); // pesquisar retorna null senão encontrar                                                                    
             Curso segundaOpcao = listaCursos.pesquisar(candidatoAtual.getSegundaOpcao());
             boolean InseridoPrimeiraOpcao, InseridoSegundaOpcao;
 
