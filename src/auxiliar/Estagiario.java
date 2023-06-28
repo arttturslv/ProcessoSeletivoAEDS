@@ -95,6 +95,7 @@ public class Estagiario {
         }
     }
 
+    
     private void intercalar(Candidato[] array, int esq, int meio, int dir, String ordem) {
         int nEsq = meio - esq + 1;
         int nDir = dir - meio;

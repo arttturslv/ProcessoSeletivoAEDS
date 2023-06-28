@@ -1,16 +1,26 @@
-Matemática 0,00
+Matemática 733,33
 Selecionados
+Mickey Mouse 766,67
+Pato Donald 733,33
+Fila de espera
+Bob Esponja 700,00
+
+Física 700,00
+Selecionados
+Peppa Pig 633,33
+Bob Esponja 700,00
 Fila de espera
 
-Física 0,00
+Química 783,33
 Selecionados
+Deadpool 800,00
+Peter Parker 783,33
 Fila de espera
+Peppa Pig 633,33
 
-Química 0,00
+Estatística 566,67
 Selecionados
-Fila de espera
-
-Estatística 0,00
-Selecionados
+Tio Patinhas 666,67
+Super Mario Bros 566,67
 Fila de espera
 
