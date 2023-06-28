@@ -1,6 +1,5 @@
 package src;
 
-import src.lista.ListaCandidatos;
 import src.auxiliar.Estagiario;
 import src.candidato.Candidato;
 import src.lista.ListaCursos;
@@ -10,7 +9,6 @@ import java.io.File;
 public class App {
     public static void main(String[] args) throws Exception {
         ListaCursos listaCurso = new ListaCursos();
-        ListaCandidatos listaCandidato = new ListaCandidatos();
 
         Estagiario estagiario = new Estagiario();
 
@@ -19,9 +17,9 @@ public class App {
         if(arq.exists()) {
             System.out.println("O arquivo foi encontrado.\n");
 
-            Candidato [] vetorCandidatos = estagiario.leituraArquivo(arq, listaCurso); //recebe o vetor de candidatos da leitura do arquivo.
-            listaCandidato = estagiario.ordenaCandidatos(vetorCandidatos, listaCandidato); //recebe o vetor e retorna a lista ordenada.
-            listaCurso = estagiario.processoSeletivo(listaCandidato, listaCurso); //recebe a lista de candidatos e de cursos, preenchendo os cursos que possuem 
+            Candidato [] vetorCandidatos = estagiario.leituraArquivo(arq, listaCurso); 
+            vetorCandidatos = estagiario.ordenaCandidatos(vetorCandidatos); 
+            listaCurso = estagiario.processoSeletivo(vetorCandidatos, listaCurso); 
             estagiario.escritaArquivo(listaCurso);
         } else {
             System.out.println("O arquivo não foi encontrado.\n");
