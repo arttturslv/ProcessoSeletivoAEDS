@@ -18,8 +18,8 @@ public class App {
             System.out.println("O arquivo foi encontrado.\n");
 
             Candidato [] vetorCandidatos = estagiario.leituraArquivo(arq, listaCurso); 
-            vetorCandidatos = estagiario.ordenaCandidatos(vetorCandidatos); 
-            listaCurso = estagiario.processoSeletivo(vetorCandidatos, listaCurso); 
+            estagiario.ordenaCandidatos(vetorCandidatos); 
+            estagiario.processoSeletivo(vetorCandidatos, listaCurso); 
             estagiario.escritaArquivo(listaCurso);
         } else {
             System.out.println("O arquivo não foi encontrado.\n");
