@@ -46,7 +46,7 @@ public class Estagiario {
             }
             listaCursos.mostrar();
 
-            Candidato[] vetorCandidatos = new Candidato[quantidadeCandidatos];
+            Candidato [] vetorCandidatos = new Candidato[quantidadeCandidatos];
             /* leitura dos cursos e criação do vetor de candidatos */
             for (int i = 0; i < quantidadeCandidatos; i++) {
                 linha = bufferedReader.readLine();
