@@ -74,25 +74,28 @@ public class Estagiario {
 
     
     public Candidato[] ordenaCandidatos(Candidato[] vetorCandidatos) {
-        mergesortRedacao(vetorCandidatos, 0, vetorCandidatos.length - 1);
+        
+        String ordem = "redacao";  //merge redação r
+        mergesort(vetorCandidatos, 0, vetorCandidatos.length - 1, ordem);
         System.out.println(" - Organizado por redação:");
 
-        mergesortMedia(vetorCandidatos, 0, vetorCandidatos.length - 1);
+        ordem = "media";  //merge media m
+        mergesort(vetorCandidatos, 0, vetorCandidatos.length - 1, ordem);
         System.out.println(" - Organizado por notas médias:");
 
         return vetorCandidatos;
     }
 
-    private void mergesortRedacao(Candidato[] array, int esq, int dir) {
+    private void mergesort(Candidato[] array, int esq, int dir, String ordem) {
         if (esq < dir) {
             int meio = (esq + dir) / 2;
-            mergesortRedacao(array, esq, meio);
-            mergesortRedacao(array, meio + 1, dir);
-            intercalarRedacao(array, esq, meio, dir);
+            mergesort(array, esq, meio, ordem);
+            mergesort(array, meio + 1, dir, ordem);
+            intercalar(array, esq, meio, dir, ordem);
         }
     }
 
-    private void intercalarRedacao(Candidato[] array, int esq, int meio, int dir) {
+    private void intercalar(Candidato[] array, int esq, int meio, int dir, String ordem) {
         int nEsq = meio - esq + 1;
         int nDir = dir - meio;
 
@@ -115,45 +118,12 @@ public class Estagiario {
         }
 
         for (iEsq = 0, iDir = 0, i = esq; i <= dir; i++) {
-            array[i] = (arrayEsq[iEsq].getNotaRedacao() <= arrayDir[iDir].getNotaRedacao()) ? arrayEsq[iEsq++]
-                    : arrayDir[iDir++];
-        }
-    }
 
-    private void mergesortMedia(Candidato[] array, int esq, int dir) {
-        if (esq < dir) {
-            int meio = (esq + dir) / 2;
-            mergesortMedia(array, esq, meio);
-            mergesortMedia(array, meio + 1, dir);
-            intercalarMedia(array, esq, meio, dir);
-        }
-    }
-
-    private void intercalarMedia(Candidato[] array, int esq, int meio, int dir) {
-        int nEsq = meio - esq + 1;
-        int nDir = dir - meio;
-
-        Candidato[] arrayEsq = new Candidato[nEsq + 1];
-        Candidato[] arrayDir = new Candidato[nDir + 1];
-
-        Candidato limite = new Candidato("saojoao", Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE, 10, 10);
-
-        arrayEsq[nEsq] = limite;
-        arrayDir[nDir] = limite;
-
-        int iEsq, iDir, i;
-
-        for (iEsq = 0; iEsq < nEsq; iEsq++) {
-            arrayEsq[iEsq] = array[esq + iEsq];
-        }
-
-        for (iDir = 0; iDir < nDir; iDir++) {
-            arrayDir[iDir] = array[(meio + 1) + iDir];
-        }
-
-        for (iEsq = 0, iDir = 0, i = esq; i <= dir; i++) {
-            array[i] = (arrayEsq[iEsq].getNotaMedia() <= arrayDir[iDir].getNotaMedia()) ? arrayEsq[iEsq++]
-                    : arrayDir[iDir++];
+            if(ordem.equals("redacao")) { //redacao primeiro
+            array[i] = (arrayEsq[iEsq].getNotaRedacao() <= arrayDir[iDir].getNotaRedacao()) ? arrayEsq[iEsq++]: arrayDir[iDir++];
+            } else if (ordem.equals("media")) { //media depois
+                array[i] = (arrayEsq[iEsq].getNotaRedacao() <= arrayDir[iDir].getNotaRedacao()) ? arrayEsq[iEsq++]: arrayDir[iDir++];
+            }
         }
     }
 
