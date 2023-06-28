@@ -26,11 +26,20 @@ Arquivo de Saída (saida.txt): <br>
 ![243194886-bb3bc1d8-15f1-4fdc-8115-9c2b47ed909b](https://github.com/arttturslv/TB-AEDS/assets/115251355/40903299-88fe-496e-b6a3-48fb39ab53f0)
 
 
-<h3>Classes</h3>:
-• App.java - Responsavel por chamar as informações do estagiario.
-• ListaCandidato (String nome, double notaRed, double notaMat, double notaLing, int [] opcoesCursos)
-+ Cursos (String nomeCurso, int codCurso, double notaCorte, int qntVagas, entities.Fila ````<alunos>```` fila_espera, Lista ````<alunos>```` lista_aprovados) //fila de cursos que armazenam os candidatos.
-+ Lista () //lista criada
-+ entities.Fila () //fila nativa "queue"
-+ entities.Estagiario (Leitura e escrita)
-+ QuickSort () //Decrescente 
+<h3>Classes criadas</h3>
+• App.java - Responsavel por chamar as informações do estagiario.<br>
+• Estagiario -  Responsável por armazenar as principais funções, como a leitura, escrita, ordenação e o processo seletivo.<br>
+• Cursos - Armazena informações do curso como nome (string), código (int), quantidade de vagas (int), nota de corte (double), lista de selecionados (obj), fila de espera (obj).<br>
+• Candidatos - Armazena informações referentes aos candidatos como nome (string), nota de redação (double), de linguagem (double), de matemática (double), nota média (double), primeira opção (int) e segunda opção (int).<br>
+• Fila de espera - É uma fila flexivel que armazena objetos candidatos.<br>
+• Lista de cursos - É uma lista flexivel simples que armazena objetos cursos<br>
+• Lista de candidatos - É uma lista flexivel simples que armazena objetos candidatos<br>
+
+<h3>Funcionamento</h3>
+O app.java passa o arquivo para a função estagiario.leituraArquivo, que é responsável por ler a quantidade de cursos e candidatos, criar os cursos e armazená-los diretamente em uma lista de cursos. Além disso, essa função cria um vetor de candidatos.
+
+O vetor de candidatos é então retornado e utilizado pela função ordenaCandidatos, que chama o algoritmo mergeSort para realizar a ordenação. Os candidatos são ordenados pela nota da redação e, em seguida, pela nota média. O vetor de candidatos ordenado é retornado e utilizado no processo seletivo.
+
+O processo seletivo verifica o vetor de candidatos, obtendo o último candidato e suas opções de curso. Se a primeira opção de curso for válida, o programa tenta inserir o candidato nesse curso. A inserção é realizada através de um método específico do curso, que verifica se há vagas disponíveis. Se houver vagas, o candidato é inserido na lista de candidatos selecionados; caso contrário, o candidato é inserido na fila de espera. O processo seletivo verifica se o candidato foi inserido na primeira opção, se o candidato não foi selecionado, o mesmo processo é repetido com a segunda opção.
+
+Ao final do processo seletivo, a lista de cursos, que já está preenchida com os candidatos selecionados e em espera, é retornada. Essa lista é impressa utilizando uma série de funções toString, que retornam os valores formatados corretamente para a saída.
